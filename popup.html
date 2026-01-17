@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Конвертер валют</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>💰 Конвертер валют</h1>
+    
+    <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+      <div class="spinner"></div>
+      <span>Завантаження курсу...</span>
+    </div>
+    
+    <div id="errorMessage" class="error-message" style="display: none;"></div>
+    
+    <div class="input-group">
+      <input 
+        type="number" 
+        id="amountInput" 
+        placeholder="Введіть суму"
+        step="0.01"
+        min="0"
+      >
+    </div>
+    
+    <div class="currency-buttons">
+      <button class="currency-btn active" id="usdBtn" data-currency="usd">
+        🇺🇸 Долари (USD)
+      </button>
+      <button class="currency-btn" id="uahBtn" data-currency="uah">
+        🇺🇦 Гривні (UAH)
+      </button>
+    </div>
+    
+    <div class="result-container" id="resultContainer">
+      <div class="result-label">Результат:</div>
+      <div class="result-value" id="resultValue">0.00</div>
+    </div>
+    
+    <div class="rate-info" id="rateInfo">
+      Завантаження курсу...
+    </div>
+    
+    <button id="refreshBtn" class="refresh-btn" title="Оновити курс">
+      🔄 Оновити курс
+    </button>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
